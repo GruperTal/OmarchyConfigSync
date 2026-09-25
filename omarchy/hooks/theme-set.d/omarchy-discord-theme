@@ -1,0 +1,4 @@
+#!/bin/bash
+# Regenerate Discord colours; the extension picks them up live. Never fail the theme switch.
+~/.local/bin/omarchy-discord-theme || logger -t omarchy-discord-theme "failed to generate Discord theme for ${1:-unknown}"
+exit 0

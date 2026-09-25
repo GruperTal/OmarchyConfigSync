@@ -1,0 +1,4 @@
+#!/bin/bash
+# Regenerate WhatsApp colours; the extension picks them up live. Never fail the theme switch.
+~/.local/bin/omarchy-whatsapp-theme || logger -t omarchy-whatsapp-theme "failed to generate WhatsApp theme for ${1:-unknown}"
+exit 0

@@ -1,0 +1,19 @@
+#!/bin/bash
+# Show desktop: park every monitor on a scratch workspace. Run again to go back.
+# ponytail: fixed 91+ workspaces — "emptym" is unreliable with pinned/persistent rules.
+state=${XDG_RUNTIME_DIR:-/tmp}/omadesk
+focus() { hyprctl dispatch "hl.dsp.focus({ $1 = \"$2\" })" >/dev/null; }
+
+mons=$(hyprctl -j monitors)
+here=$(jq -r '.[]|select(.focused)|.name' <<<"$mons")
+
+if [ -s "$state" ]; then
+  while read -r m ws; do focus monitor "$m"; focus workspace "$ws"; done <"$state"
+  rm -f "$state"
+else
+  jq -r '.[]|"\(.name) \(.activeWorkspace.id)"' <<<"$mons" >"$state"
+  i=90
+  while read -r m _; do focus monitor "$m"; focus workspace $((++i)); done <"$state"
+fi
+
+focus monitor "$here"

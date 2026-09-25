@@ -1,0 +1,111 @@
+{
+  "format": "omarchy-config-plugins",
+  "version": 1,
+  "plugins": [
+    {
+      "id": "aislandener.galaxy-buds",
+      "name": "Galaxy Buds",
+      "version": "1.1.0",
+      "commit": "a05f860f6cb73645fb5b1638b8121ae6a63e8014",
+      "source": "https://github.com/aislandener/galaxy-buds-control.git"
+    },
+    {
+      "id": "davefano.trackpad-plus",
+      "name": "Trackpad Plus",
+      "version": "2026.09.15.2",
+      "commit": "d6d35e13026ff4af4a4b88722eadee2697870a85",
+      "source": "https://github.com/davefano/omarchy-trackpad-plus.git"
+    },
+    {
+      "id": "dizziee.system-updates",
+      "name": "System Updates",
+      "version": "1.3.0",
+      "commit": "a4cb4668c850d6c8796ff95c3f7382c7f6d25b92",
+      "source": "https://github.com/JJDizz1L/dizziee.system-updates.git"
+    },
+    {
+      "id": "harshith.system-monitor",
+      "name": "System Monitor",
+      "version": "1.2.0",
+      "commit": "60baf04f3122611a1da8c316d1ea5f41b7125d58",
+      "source": "https://github.com/Harshith292002/omarchy-system-monitor.git"
+    },
+    {
+      "id": "hass",
+      "name": "Home Assistant",
+      "version": "0.5.0",
+      "commit": "56f1dcdd201e39cbe116d3cbe2cb22b40f394b9b",
+      "source": "https://github.com/konradk/hass.git"
+    },
+    {
+      "id": "im0001gt.screens",
+      "name": "Screens",
+      "version": "1.15.0",
+      "commit": "bd8325657b511cc6c44a5cea954d66f66e8ad659",
+      "source": "https://github.com/IM0001GT/omarchy-screens.git"
+    },
+    {
+      "id": "io.github.jeremylanger.omaspotify",
+      "name": "OmaSpotify",
+      "version": "2.0.1",
+      "commit": "2de4676b23bf9e7e3a5b17a83ba7c28672a19a79",
+      "source": "https://github.com/jeremylanger/omaspotify.git"
+    },
+    {
+      "id": "io.github.mjtiempo.proxmox-client",
+      "name": "Proxmox Client",
+      "version": "0.4.3",
+      "commit": "cb0d6eb46f402933ea3dfdf8598198f1c228fce2",
+      "source": "https://github.com/mjtiempo/omarchy-proxmox-client.git"
+    },
+    {
+      "id": "io.github.mutahir.omavault",
+      "name": "OmaVault",
+      "version": "1.0.0",
+      "commit": "b7c92fe8a50ddc7a6871a4fa681dfc7bdb4231c2",
+      "source": "https://github.com/mutahir/omavault"
+    },
+    {
+      "id": "io.github.sirjul1337.lock-explorer",
+      "name": "Lock Screen Explorer",
+      "version": "1.7.5",
+      "commit": "5d5dec438e46fee9052f1a87ba6764d73e3c7d1c",
+      "source": "https://github.com/SirJul1337/omarchy-lock-explorer.git"
+    },
+    {
+      "id": "jkoestinger.vpn",
+      "name": "VPN",
+      "version": "1.5.0",
+      "commit": "e0f2d979bf7f13f61af9c3759af5f5a0c18b137c",
+      "source": "https://github.com/jkoestinger/omarchy-vpn.git"
+    },
+    {
+      "id": "meviusisback.agent-orchestr",
+      "name": "Agent Orchestrator",
+      "version": "1.0.0",
+      "commit": "cb35aaa701b81b9372f43d7efb882b8b34fcd662",
+      "source": "https://github.com/meviusisback/agent-orchestr.git"
+    },
+    {
+      "id": "njpatel.omapager",
+      "name": "Omapager",
+      "version": "1.1.1",
+      "commit": "5cde92ac662418a877fc858bb5859a0933526d64",
+      "source": "https://github.com/njpatel/omapager.git"
+    },
+    {
+      "id": "omaplug",
+      "name": "Plugin Manager",
+      "version": "1.6.5",
+      "commit": "9da73fc13fc2027be5b44915b4ab89440beb74ab",
+      "source": "https://github.com/fross100/omaplug.git"
+    },
+    {
+      "id": "tmn73.calendar",
+      "name": "Calendar",
+      "version": "0.3.0",
+      "commit": "7dc51bea68ffa53704514beb497c0124288241cc",
+      "source": "https://github.com/tmn73/omarchy-calendar.git"
+    }
+  ]
+}

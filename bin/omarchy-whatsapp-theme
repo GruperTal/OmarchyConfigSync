@@ -1,0 +1,120 @@
+#!/usr/bin/env python3
+"""Generate WhatsApp Web colours from the active Omarchy theme.
+
+Writes theme.json into the unpacked Chrome extension, which re-reads it live.
+WhatsApp paints its UI from --WDS-* design tokens (each with an -RGB twin),
+so overriding those recolours everything that follows the WhatsApp theme.
+"""
+import json
+import os
+import re
+import subprocess
+import sys
+from pathlib import Path
+
+OUT = Path.home() / ".local/share/omarchy-whatsapp-theme/extension/theme.json"
+HEX = re.compile(r"#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})")
+
+
+def palette(colors_file=None):
+    """The active theme's palette as Omarchy resolves it for its own templates.
+
+    Third-party themes often only define color0..color15 or short names (bg, fg);
+    omarchy-theme-color maps those and derives missing shades and the mode.
+    """
+    cmd = ["omarchy-theme-color", "--all"] + (["--file", str(colors_file)] if colors_file else [])
+    out = subprocess.run(cmd, capture_output=True, text=True, check=True).stdout
+    return dict(line.split("\t", 1) for line in out.splitlines() if "\t" in line)
+
+
+def rgb(h):
+    h = h.lstrip("#")
+    if len(h) == 3:
+        h = "".join(ch * 2 for ch in h)
+    return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
+
+
+def mix(a, b, t):
+    return tuple(round(x + (y - x) * t) for x, y in zip(a, b))
+
+
+def luminance(c):
+    ch = [v / 255 for v in c]
+    ch = [v / 12.92 if v <= 0.04045 else ((v + 0.055) / 1.055) ** 2.4 for v in ch]
+    return 0.2126 * ch[0] + 0.7152 * ch[1] + 0.0722 * ch[2]
+
+
+def contrast(a, b):
+    la, lb = sorted((luminance(a), luminance(b)), reverse=True)
+    return (la + 0.05) / (lb + 0.05)
+
+
+def fit(c, against, toward, ratio=4.5):
+    """Move c toward `toward` just far enough to reach `ratio` contrast with `against`."""
+    for i in range(21):
+        out = mix(c, toward, i / 20)
+        if contrast(out, against) >= ratio:
+            return out
+    return toward
+
+
+def build(t):
+    c = {k: rgb(v) for k, v in t.items() if HEX.fullmatch(v)}
+    bg, fg, muted = c["background"], c["foreground"], c["muted"]
+    accent = c.get("accent", c["blue"])  # Omarchy's shell falls back to color4 (blue) too
+    dbg, lbg, dfg = c["dark_background"], c["lighter_background"], c["dark_foreground"]
+    raised = mix(bg, lbg, 0.5)
+    outgoing = fit(mix(bg, accent, 0.35), fg, bg)  # bubble text is content-default (fg)
+    text = lambda col: fit(col, bg, fg)
+    on_accent = max((bg, fg), key=lambda x: contrast(x, accent))
+
+    # token -> (colour, alpha). Alpha tokens keep their base colour in the -RGB twin.
+    solid = {
+        "accent": accent, "accent-emphasized": mix(accent, fg, 0.3), "accent-deemphasized": mix(bg, accent, 0.25),
+        "app-wash": dbg, "background-wash-plain": bg, "background-wash-inset": dbg,
+        "background-elevated-wash-plain": raised, "background-elevated-wash-inset": raised,
+        "surface-default": bg, "surface-emphasized": raised, "surface-inverse": fg,
+        "surface-elevated-default": raised, "surface-elevated-emphasized": lbg,
+        "components-surface-nav-bar": dbg, "components-filter-surface-selected": mix(bg, accent, 0.3),
+        "content-default": fg, "content-action-default": fg, "content-deemphasized": text(dfg),
+        "content-disabled": muted, "content-inverse": bg, "content-on-accent": on_accent,
+        "content-read": text(c["blue"]), "content-external-link": text(accent), "content-action-emphasized": text(accent),
+        "lines-outline-default": muted,
+        "persistent-always-branded": accent, "persistent-activity-indicator": c["green"],
+        "secondary-positive": text(c["green"]), "secondary-positive-deemphasized": mix(bg, c["green"], 0.2),
+        "secondary-negative": text(c["red"]), "secondary-negative-deemphasized": mix(bg, c["red"], 0.2),
+        "secondary-negative-emphasized": mix(c["red"], fg, 0.3),
+        "secondary-warning": text(c["yellow"]), "secondary-warning-deemphasized": mix(bg, c["yellow"], 0.2),
+        "systems-bubble-surface-incoming": lbg, "systems-bubble-surface-outgoing": outgoing,
+        "systems-bubble-surface-system": raised, "systems-bubble-surface-business": raised, "systems-bubble-surface-e2e": raised,
+        "systems-bubble-content-deemphasized": text(dfg), "systems-bubble-content-business": text(c["green"]),
+        "systems-bubble-content-e2e": text(c["yellow"]),
+        "systems-chat-background-wallpaper": dbg, "systems-chat-surface-composer": lbg, "systems-chat-surface-tray": bg,
+        "systems-status-seen": muted,
+    }
+    translucent = {
+        "surface-highlight": (fg, 0.1), "surface-pressed": (fg, 0.2), "components-active-list-row": (fg, 0.1),
+        "lines-divider": (fg, 0.1), "lines-outline-deemphasized": (fg, 0.15),
+        "systems-chat-foreground-wallpaper": (fg, 0.06),
+    }
+
+    out = {"color-scheme": t["mode"]}
+    for name, col in solid.items():
+        out[f"--WDS-{name}"] = "#%02x%02x%02x" % col
+        out[f"--WDS-{name}-RGB"] = "%d, %d, %d" % col
+    for name, (col, a) in translucent.items():
+        out[f"--WDS-{name}"] = "rgba(%d, %d, %d, %s)" % (*col, a)
+        out[f"--WDS-{name}-RGB"] = "%d, %d, %d" % col
+    return out
+
+
+def main():
+    data = json.dumps(build(palette()), indent=1)
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    tmp = OUT.with_suffix(".tmp")
+    tmp.write_text(data)
+    os.replace(tmp, OUT)  # atomic, so Chrome never serves a half-written file
+
+
+if __name__ == "__main__":
+    sys.exit(main())
