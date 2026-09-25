@@ -34,5 +34,5 @@
   "vpn.staging": {"icon":"\udb80\udde7","label":"Staging","action":"~/.config/omarchy/bar/scripts/vpn-connect 'VPN Staging'","checked":"nmcli -t -f NAME connection show --active | grep -qx 'VPN Staging'"},
   "vpn.disconnect": {"icon":"\udb82\udd9e","label":"Disconnect","action":"~/.config/omarchy/bar/scripts/vpn-toggle","when":"nmcli -t -f TYPE connection show --active | grep -qx vpn"},
   "vpn.forget": {"icon":"\udb84\udd0a","label":"Forget saved passwords","action":"~/.config/omarchy/bar/scripts/vpn-forget","when":"nmcli -t -f NAME,TYPE connection show | awk -F: '$2==\"vpn\"' | head -1 | grep -q ."},
-  "trigger.capture.screenshot": {"icon":"","label":"Screenshot","action":"omasnap"},
+  "trigger.capture.screenshot": {"icon":"","label":"Screenshot","action":"omasnap"}
 }

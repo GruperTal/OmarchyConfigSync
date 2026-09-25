@@ -80,6 +80,13 @@
       "source": "https://github.com/jkoestinger/omarchy-vpn.git"
     },
     {
+      "id": "jrmmhm.pocket",
+      "name": "Pocket",
+      "version": "0.4.1",
+      "commit": "ec3f769ce16b446ca38191d1d480a7a7ac2a1533",
+      "source": "https://github.com/jrmmhm/omarchy-pocket.git"
+    },
+    {
       "id": "meviusisback.agent-orchestr",
       "name": "Agent Orchestrator",
       "version": "1.0.0",
@@ -99,6 +106,13 @@
       "version": "1.6.5",
       "commit": "9da73fc13fc2027be5b44915b4ab89440beb74ab",
       "source": "https://github.com/fross100/omaplug.git"
+    },
+    {
+      "id": "onlyvishesh.power-manager",
+      "name": "Omarchy Power Manager",
+      "version": "2.0.0",
+      "commit": "767f8f1c2a01e5f64d6a5c5cfee8c49ce9c162b3",
+      "source": "https://github.com/onlyVishesh/omarchy-power-manager.git"
     },
     {
       "id": "tmn73.calendar",

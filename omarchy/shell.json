@@ -75,10 +75,24 @@
           "id": "omarchy.tray"
         },
         {
-          "id": "jkoestinger.vpn"
+          "id": "gruper.nanit"
+        },
+        {
+          "id": "omarchy.power",
+          "showPercentage": false
+        },
+        {
+          "id": "omarchy.agents"
         },
         {
           "id": "davefano.trackpad-plus"
+        },
+        {
+          "id": "jrmmhm.pocket",
+          "members": "gruper.nanit, omarchy.power, omarchy.agents, davefano.trackpad-plus"
+        },
+        {
+          "id": "jkoestinger.vpn"
         },
         {
           "id": "omarchy.keyboard-layout"
@@ -86,12 +100,6 @@
         {
           "id": "harshith.system-monitor",
           "barMode": "Adaptive"
-        },
-        {
-          "id": "omarchy.agents"
-        },
-        {
-          "id": "gruper.nanit"
         },
         {
           "id": "omarchy.bluetooth"
@@ -106,8 +114,7 @@
           "id": "omarchy.audio"
         },
         {
-          "id": "omarchy.power",
-          "showPercentage": false
+          "id": "onlyvishesh.power-manager"
         }
       ]
     }
@@ -115,8 +122,9 @@
   "plugins": [
     {
       "id": "io.github.sirjul1337.lock-explorer",
-      "design": "split",
-      "blankMs": 30000
+      "design": "profile",
+      "blankMs": 30000,
+      "boot": "theme"
     },
     {
       "id": "io.github.grupertal.biometric-hud"
