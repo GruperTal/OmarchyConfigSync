@@ -103,8 +103,8 @@
     {
       "id": "tmn73.calendar",
       "name": "Calendar",
-      "version": "0.3.0",
-      "commit": "7dc51bea68ffa53704514beb497c0124288241cc",
+      "version": "0.4.0",
+      "commit": "15509fca18f14b9e7da5d7bf85cdf3d9da665bae",
       "source": "https://github.com/tmn73/omarchy-calendar.git"
     }
   ]
