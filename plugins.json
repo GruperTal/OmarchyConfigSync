@@ -68,8 +68,8 @@
     {
       "id": "io.github.sirjul1337.lock-explorer",
       "name": "Lock Screen Explorer",
-      "version": "1.7.5",
-      "commit": "5d5dec438e46fee9052f1a87ba6764d73e3c7d1c",
+      "version": "1.9.1",
+      "commit": "ea73799fee87af4bad5941f118bcda1317e57cb4",
       "source": "https://github.com/SirJul1337/omarchy-lock-explorer.git"
     },
     {
@@ -85,6 +85,13 @@
       "version": "0.4.1",
       "commit": "ec3f769ce16b446ca38191d1d480a7a7ac2a1533",
       "source": "https://github.com/jrmmhm/omarchy-pocket.git"
+    },
+    {
+      "id": "k-kit.chrome-close-confirmation",
+      "name": "Chrome Close Confirmation",
+      "version": "1.0.0",
+      "commit": "304e9d273f376a49332661631aa1045b7a0fbf10",
+      "source": "https://github.com/K-Kit/omarchy-chrome-close-confirmation.git"
     },
     {
       "id": "meviusisback.agent-orchestr",
