@@ -97,14 +97,14 @@
       "id": "meviusisback.agent-orchestr",
       "name": "Agent Orchestrator",
       "version": "1.0.0",
-      "commit": "cb35aaa701b81b9372f43d7efb882b8b34fcd662",
+      "commit": "1dc532607ae9602136b26510d1048a7c9cd64801",
       "source": "https://github.com/meviusisback/agent-orchestr.git"
     },
     {
       "id": "njpatel.omapager",
       "name": "Omapager",
       "version": "1.1.1",
-      "commit": "5cde92ac662418a877fc858bb5859a0933526d64",
+      "commit": "c389e73516828d18f26e8efec2127c0c3dc3cb97",
       "source": "https://github.com/njpatel/omapager.git"
     },
     {
