@@ -20,7 +20,7 @@
       "id": "dizziee.system-updates",
       "name": "System Updates",
       "version": "1.5.0",
-      "commit": "fdd5df1bdacbdcc6314b987594e5e678c380d7bc",
+      "commit": "74e094a790ce45c0b2d6a5afcaa0d80315c46288",
       "source": "https://github.com/JJDizz1L/dizziee.system-updates.git"
     },
     {
@@ -40,8 +40,8 @@
     {
       "id": "im0001gt.screens",
       "name": "Screens",
-      "version": "1.15.0",
-      "commit": "bd8325657b511cc6c44a5cea954d66f66e8ad659",
+      "version": "1.15.2",
+      "commit": "1138159c3c34abbe674f05be45c23b21799085c6",
       "source": "https://github.com/IM0001GT/omarchy-screens.git"
     },
     {
@@ -68,8 +68,8 @@
     {
       "id": "io.github.sirjul1337.lock-explorer",
       "name": "Lock Screen Explorer",
-      "version": "1.9.1",
-      "commit": "ea73799fee87af4bad5941f118bcda1317e57cb4",
+      "version": "1.9.4",
+      "commit": "b6ed7bded638483bce77604d239e365e16452517",
       "source": "https://github.com/SirJul1337/omarchy-lock-explorer.git"
     },
     {
@@ -124,8 +124,8 @@
     {
       "id": "tmn73.calendar",
       "name": "Calendar",
-      "version": "0.4.0",
-      "commit": "15509fca18f14b9e7da5d7bf85cdf3d9da665bae",
+      "version": "0.6.3",
+      "commit": "809640b9b217ab06cc0dbe5cee31d7fb0fe0b0bf",
       "source": "https://github.com/tmn73/omarchy-calendar.git"
     }
   ]
