@@ -12,8 +12,8 @@
     {
       "id": "davefano.trackpad-plus",
       "name": "Trackpad Plus",
-      "version": "2026.09.15.2",
-      "commit": "d6d35e13026ff4af4a4b88722eadee2697870a85",
+      "version": "2026.10.05.0",
+      "commit": "2be1d20bccea8dbb3e8c0455ec8f21f6f6b9a2d0",
       "source": "https://github.com/davefano/omarchy-trackpad-plus.git"
     },
     {
@@ -68,9 +68,16 @@
     {
       "id": "io.github.sirjul1337.lock-explorer",
       "name": "Lock Screen Explorer",
-      "version": "1.9.4",
-      "commit": "b6ed7bded638483bce77604d239e365e16452517",
+      "version": "1.9.6",
+      "commit": "e9480d4dd4ecc0a176f85130557bcd93aa2ebfc1",
       "source": "https://github.com/SirJul1337/omarchy-lock-explorer.git"
+    },
+    {
+      "id": "io.github.ypmrg.bambu-companion",
+      "name": "Bambu Companion",
+      "version": "1.8.4",
+      "commit": "e37a3eee86c545b89f9ad23a57feb9dcd226be23",
+      "source": "https://github.com/ypMrg/omarchy-bambu-companion.git"
     },
     {
       "id": "jkoestinger.vpn",
@@ -82,8 +89,8 @@
     {
       "id": "jrmmhm.pocket",
       "name": "Pocket",
-      "version": "0.4.1",
-      "commit": "ec3f769ce16b446ca38191d1d480a7a7ac2a1533",
+      "version": "0.5.0",
+      "commit": "81c90494f812c9f58a66e8a0e68a78c59197c1c0",
       "source": "https://github.com/jrmmhm/omarchy-pocket.git"
     },
     {
@@ -110,8 +117,8 @@
     {
       "id": "omaplug",
       "name": "Plugin Manager",
-      "version": "1.6.5",
-      "commit": "9da73fc13fc2027be5b44915b4ab89440beb74ab",
+      "version": "1.6.6",
+      "commit": "64df56e876846247ded550890c52b7b190776b3e",
       "source": "https://github.com/fross100/omaplug.git"
     },
     {
@@ -122,10 +129,17 @@
       "source": "https://github.com/onlyVishesh/omarchy-power-manager.git"
     },
     {
+      "id": "sero.local-ai",
+      "name": "Local AI",
+      "version": "6.9.0",
+      "commit": "ea231e3a25f3fb8d977aaebe8ff62e5ae5913c05",
+      "source": "https://github.com/0xSero/omarchy-local-ai"
+    },
+    {
       "id": "tmn73.calendar",
       "name": "Calendar",
-      "version": "0.6.3",
-      "commit": "809640b9b217ab06cc0dbe5cee31d7fb0fe0b0bf",
+      "version": "0.7.0",
+      "commit": "1b1a4983bf617485fe223fab6a11f1eb5113d9e0",
       "source": "https://github.com/tmn73/omarchy-calendar.git"
     }
   ]

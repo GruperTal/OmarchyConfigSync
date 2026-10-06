@@ -43,11 +43,18 @@
             "c_2352b22dfc52a68b97bb3ddbacf128aef61e785881f0fe373d6f78b748858d85@group.calendar.google.com",
             "alon.gal@folloze.com"
           ],
-          "hideDeclined": true
+          "hideDeclined": true,
+          "shortcutLegendExpanded": false
         },
         {
           "id": "omarchy.weather",
           "unit": "metric"
+        },
+        {
+          "id": "io.github.ypmrg.bambu-companion"
+        },
+        {
+          "id": "sero.local-ai"
         },
         {
           "id": "dizziee.system-updates",
