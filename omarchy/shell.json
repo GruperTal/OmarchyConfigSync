@@ -47,14 +47,27 @@
           "shortcutLegendExpanded": false
         },
         {
-          "id": "omarchy.weather",
-          "unit": "metric"
-        },
-        {
-          "id": "io.github.ypmrg.bambu-companion"
-        },
-        {
-          "id": "sero.local-ai"
+          "id": "io.github.ypmrg.bambu-companion",
+          "printerName": "3D Printer",
+          "host": "192.168.68.122",
+          "mqttPort": 8883,
+          "ftpsPort": 990,
+          "serial": "03900D662227422",
+          "username": "bblp",
+          "maxSegments": 500000,
+          "explosionFactor": 100,
+          "autoRotate": true,
+          "showBarSummary": true,
+          "mqttTlsFingerprint": "6907F708C4D70747AD5249EC745772EF8924EE36CFD75DBEFCE4074C323D6546",
+          "ftpsTlsFingerprint": "6907F708C4D70747AD5249EC745772EF8924EE36CFD75DBEFCE4074C323D6546",
+          "installationId": "c8fc24f00714668f1b7ec479890e1e0dda5c1b6f3f6a58d73ad8c5204cf26888",
+          "acknowledgedAlerts": [
+            "hms:HMS_0300_1A00_0002_0001",
+            "print:0x03008014",
+            "hms:HMS_1200_4500_0002_0003",
+            "print:0x12008016",
+            "print:0x0300400C"
+          ]
         },
         {
           "id": "dizziee.system-updates",
@@ -85,10 +98,6 @@
           "id": "gruper.nanit"
         },
         {
-          "id": "omarchy.power",
-          "showPercentage": false
-        },
-        {
           "id": "omarchy.agents"
         },
         {
@@ -96,7 +105,7 @@
         },
         {
           "id": "jrmmhm.pocket",
-          "members": "gruper.nanit, omarchy.power, omarchy.agents, davefano.trackpad-plus"
+          "members": "gruper.nanit, omarchy.agents, davefano.trackpad-plus, omarchy.power"
         },
         {
           "id": "jkoestinger.vpn"

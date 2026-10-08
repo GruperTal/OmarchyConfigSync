@@ -12,8 +12,8 @@
     {
       "id": "davefano.trackpad-plus",
       "name": "Trackpad Plus",
-      "version": "2026.10.05.0",
-      "commit": "2be1d20bccea8dbb3e8c0455ec8f21f6f6b9a2d0",
+      "version": "2026.10.07.0",
+      "commit": "769d4e4803b8dce5931dbcc9250e0619b27feb7e",
       "source": "https://github.com/davefano/omarchy-trackpad-plus.git"
     },
     {
@@ -103,8 +103,8 @@
     {
       "id": "meviusisback.agent-orchestr",
       "name": "Agent Orchestrator",
-      "version": "1.0.0",
-      "commit": "1dc532607ae9602136b26510d1048a7c9cd64801",
+      "version": "1.1.0",
+      "commit": "0d5d6154ec28d2a7b28be4dfaf8f00bed06e0fb6",
       "source": "https://github.com/meviusisback/agent-orchestr.git"
     },
     {
@@ -131,8 +131,8 @@
     {
       "id": "sero.local-ai",
       "name": "Local AI",
-      "version": "6.9.0",
-      "commit": "ea231e3a25f3fb8d977aaebe8ff62e5ae5913c05",
+      "version": "6.12.1",
+      "commit": "fae3c057e8cf671f29ad7627c789d57d1435b9f2",
       "source": "https://github.com/0xSero/omarchy-local-ai"
     },
     {
