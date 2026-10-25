@@ -21,7 +21,10 @@
           "id": "im0001gt.screens"
         },
         {
-          "id": "omarchy.workspaces"
+          "id": "im0001gt.screens.workspaces"
+        },
+        {
+          "id": "io.github.nobledoodle.omarchroma"
         },
         {
           "id": "gladimdim.config-sync"
@@ -35,7 +38,7 @@
           "id": "tmn73.calendar",
           "format": "ddd d MMM HH:mm",
           "formatAlt": "d MMMM 'W'ww yyyy",
-          "verticalFormat": "HH\n—\nmm",
+          "verticalFormat": "HH\n\u2014\nmm",
           "hiddenCalendars": [
             "c_18829krg0f4fuh53hgcmcomtep57c@resource.calendar.google.com",
             "qntna6f7m7rta6o2bg2l9i33io@group.calendar.google.com",
@@ -44,7 +47,8 @@
             "alon.gal@folloze.com"
           ],
           "hideDeclined": true,
-          "shortcutLegendExpanded": false
+          "shortcutLegendExpanded": false,
+          "showYearProgress": false
         },
         {
           "id": "io.github.ypmrg.bambu-companion",
@@ -62,6 +66,11 @@
           "ftpsTlsFingerprint": "6907F708C4D70747AD5249EC745772EF8924EE36CFD75DBEFCE4074C323D6546",
           "installationId": "c8fc24f00714668f1b7ec479890e1e0dda5c1b6f3f6a58d73ad8c5204cf26888",
           "acknowledgedAlerts": [
+            "hms:HMS_1200_2200_0003_0001",
+            "hms:HMS_1200_1100_0002_0002",
+            "print:0x12008006",
+            "hms:HMS_1200_2200_0002_0001",
+            "print:0x12008011",
             "hms:HMS_0300_1A00_0002_0001",
             "print:0x03008014",
             "hms:HMS_1200_4500_0002_0003",
@@ -105,10 +114,15 @@
         },
         {
           "id": "jrmmhm.pocket",
-          "members": "gruper.nanit, omarchy.agents, davefano.trackpad-plus, omarchy.power"
+          "members": "gruper.nanit, omarchy.agents, davefano.trackpad-plus, omarchy.power",
+          "pinned": ""
         },
         {
           "id": "jkoestinger.vpn"
+        },
+        {
+          "id": "oma.nearby",
+          "downloadDir": "/home/gruper/Downloads"
         },
         {
           "id": "omarchy.keyboard-layout"
@@ -147,6 +161,9 @@
     },
     {
       "id": "k-kit.chrome-close-confirmation"
+    },
+    {
+      "id": "gruper.volume-beep"
     }
   ],
   "disabledPlugins": [

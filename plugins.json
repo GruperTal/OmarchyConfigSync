@@ -13,21 +13,21 @@
       "id": "davefano.trackpad-plus",
       "name": "Trackpad Plus",
       "version": "2026.10.07.0",
-      "commit": "769d4e4803b8dce5931dbcc9250e0619b27feb7e",
+      "commit": "34646090e7c516d8a3a801621767b2052f4d3858",
       "source": "https://github.com/davefano/omarchy-trackpad-plus.git"
     },
     {
       "id": "dizziee.system-updates",
       "name": "System Updates",
       "version": "1.5.0",
-      "commit": "74e094a790ce45c0b2d6a5afcaa0d80315c46288",
+      "commit": "ea5fbf066bf5589b8fb394029900162d553a5b91",
       "source": "https://github.com/JJDizz1L/dizziee.system-updates.git"
     },
     {
       "id": "harshith.system-monitor",
       "name": "System Monitor",
-      "version": "1.2.0",
-      "commit": "60baf04f3122611a1da8c316d1ea5f41b7125d58",
+      "version": "1.5.2",
+      "commit": "71599f7276f842f1b9dc3d843513e45b0e0f948f",
       "source": "https://github.com/Harshith292002/omarchy-system-monitor.git"
     },
     {
@@ -66,10 +66,17 @@
       "source": "https://github.com/mutahir/omavault"
     },
     {
+      "id": "io.github.nobledoodle.omarchroma",
+      "name": "Omarchroma",
+      "version": "3.2.4",
+      "commit": "bf0590408588bf6873c526e40592b53098b2a0ec",
+      "source": "https://github.com/NobleDoodle/omarchroma.git"
+    },
+    {
       "id": "io.github.sirjul1337.lock-explorer",
       "name": "Lock Screen Explorer",
-      "version": "1.9.6",
-      "commit": "e9480d4dd4ecc0a176f85130557bcd93aa2ebfc1",
+      "version": "2.0.7",
+      "commit": "4e5c3e94aa7e5f1d03cb712b9d07ae715d108141",
       "source": "https://github.com/SirJul1337/omarchy-lock-explorer.git"
     },
     {
@@ -103,8 +110,8 @@
     {
       "id": "meviusisback.agent-orchestr",
       "name": "Agent Orchestrator",
-      "version": "1.1.0",
-      "commit": "0d5d6154ec28d2a7b28be4dfaf8f00bed06e0fb6",
+      "version": "1.1.2",
+      "commit": "9012ebde19bec7a1344e52efd09e2a1b09e1bd25",
       "source": "https://github.com/meviusisback/agent-orchestr.git"
     },
     {
@@ -113,6 +120,13 @@
       "version": "1.1.1",
       "commit": "c389e73516828d18f26e8efec2127c0c3dc3cb97",
       "source": "https://github.com/njpatel/omapager.git"
+    },
+    {
+      "id": "oma.nearby",
+      "name": "Nearby",
+      "version": "1.2.8",
+      "commit": "eb2781c554fbdc22df3f05a322b8ff924fdfa6ad",
+      "source": "https://github.com/jfg96/omarchy-nearby.git"
     },
     {
       "id": "omaplug",
@@ -138,8 +152,8 @@
     {
       "id": "tmn73.calendar",
       "name": "Calendar",
-      "version": "0.7.0",
-      "commit": "1b1a4983bf617485fe223fab6a11f1eb5113d9e0",
+      "version": "0.7.4",
+      "commit": "a190d1bcc2e6eb1c0e6c9130e3872fcdd6a292c8",
       "source": "https://github.com/tmn73/omarchy-calendar.git"
     }
   ]

@@ -36,3 +36,8 @@ o.window("playwright-chrome", {
   focus_on_activate = false,
   suppress_event = "activate activatefocus",
 })
+
+o.window("com.dcervelli.gamut", { float = true, center = true, tag = "-default-opacity", opacity = "1 1" })
+
+-- Graphical omarchy update (~/Work/omarchy-update-ui).
+o.window("org.omarchy.update", { float = true, center = true, tag = "-default-opacity", opacity = "1 1" })

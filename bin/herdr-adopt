@@ -1,0 +1,122 @@
+#!/usr/bin/env python3
+"""Move the focused terminal window into a new Herdr workspace.
+
+A running process can't be re-parented into Herdr, so what moves is the
+directory, and the command line: a claude session is resumed, any other
+running command is typed into the new pane for you to confirm with Enter.
+
+Usage: herdr-adopt [--dry-run] [--window <pid>]
+"""
+import json, os, re, shlex, signal, subprocess, sys, time
+
+DRY = "--dry-run" in sys.argv
+SHELLS = {"bash", "zsh", "fish", "sh", "dash", "nu", "ksh"}
+
+
+def sh(*cmd):
+    r = subprocess.run(cmd, capture_output=True, text=True)
+    if r.returncode:
+        fail(f"{cmd[0]} failed: {(r.stderr or r.stdout).strip()[:200]}")
+    return r.stdout
+
+
+def note(msg):
+    subprocess.run(["notify-send", "-a", "herdr-adopt", "Herdr", msg])
+
+
+def fail(msg):
+    note(msg)
+    sys.exit(msg)
+
+
+PARENT = {int(a): int(b) for a, b in
+          (l.split() for l in sh("ps", "-eo", "pid=,ppid=").splitlines())}
+
+
+def ancestors(pid):
+    while pid > 1 and pid in PARENT:
+        pid = PARENT[pid]
+        yield pid
+
+
+def comm(pid):
+    return open(f"/proc/{pid}/comm").read().strip()
+
+
+def argv(pid):
+    return [a for a in open(f"/proc/{pid}/cmdline", "rb")
+            .read().decode(errors="replace").split("\0") if a]
+
+
+# --- what are we moving? -----------------------------------------------------
+if "--window" in sys.argv:
+    win = int(sys.argv[sys.argv.index("--window") + 1])
+else:
+    win = json.loads(sh("hyprctl", "activewindow", "-j")).get("pid") or 0
+if not win or not os.path.exists(f"/proc/{win}"):
+    fail("No focused window")
+
+# the terminal's session leader: its child holding the pty
+leader = next((p for p in sorted(c for c, pp in PARENT.items() if pp == win)
+               if os.path.exists(f"/proc/{p}")
+               and sh("ps", "-o", "tty=", "-p", str(p)).strip() not in ("", "?")),
+              None)
+if leader is None:
+    fail("Focused window is not a terminal")
+
+# foreground process group on that pty; equal to the leader when it's idle
+tpgid = int(sh("ps", "-o", "tpgid=", "-p", str(leader)).strip() or leader)
+proc = tpgid if tpgid > 0 and tpgid != leader else leader
+kind = comm(proc)
+idle = kind in SHELLS
+cwd = os.readlink(f"/proc/{proc}/cwd")
+
+# --- what should run over there? --------------------------------------------
+run = send = None
+if kind == "claude":
+    a = argv(proc)
+    sid = next((m.group(1) or (a[i + 1] if i + 1 < len(a) else "")
+                for i, x in enumerate(a)
+                for m in [re.fullmatch(r"--resume(?:=(.+))?|-r", x)] if m), "")
+    # ponytail: no id in argv (fresh session) -> picker, since `-c` could grab a
+    # different live session in the same cwd
+    run = f"claude --resume {sid}" if re.fullmatch(r"[0-9a-f-]{36}", sid) else "claude --resume"
+elif not idle:
+    send = shlex.join(argv(proc))  # typed, not run: you press Enter
+
+if DRY:
+    print(f"window={win} leader={leader}({comm(leader)}) fg={proc}({kind}) idle={idle}\n"
+          f"cwd={cwd}\nrun={run!r} prefill={send!r}")
+    sys.exit(0)
+
+# --- move --------------------------------------------------------------------
+ws = json.loads(sh("herdr", "workspace", "create", "--cwd", cwd,
+                   "--label", os.path.basename(cwd) or "adopted", "--focus"))
+pane = ws["result"]["root_pane"]["pane_id"]
+
+if kind == "claude":
+    os.kill(proc, signal.SIGTERM)  # transcript is already on disk
+    for _ in range(25):
+        if not os.path.exists(f"/proc/{proc}"):
+            break
+        time.sleep(0.2)
+
+if run:
+    sh("herdr", "pane", "run", pane, run)
+elif send:
+    sh("herdr", "pane", "send-text", pane, send)
+
+# close the old window only when nothing is left running in it
+if idle or kind == "claude":
+    sh("hyprctl", "dispatch", "closewindow", f"pid:{win}")
+else:
+    note(f"New workspace is ready. {kind} is still running in the old window.")
+
+# raise the Herdr window (its class is foot too, so find it by process tree)
+wins = {c["pid"] for c in json.loads(sh("hyprctl", "clients", "-j"))}
+for h in [int(p) for p in subprocess.run(["pgrep", "-x", "herdr"],
+                                         capture_output=True, text=True).stdout.split()]:
+    w = next((a for a in ancestors(h) if a in wins), None)
+    if w:
+        sh("hyprctl", "dispatch", "focuswindow", f"pid:{w}")
+        break
