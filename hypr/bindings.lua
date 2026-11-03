@@ -21,3 +21,4 @@ o.bind("SUPER + SLASH", "Monitor scaling up", "/home/gruper/.config/omarchy/plug
 o.bind("SUPER + W", "Close window", "omarchy-close-window")
 o.bind("SUPER + SHIFT + P", "Immich", { webapp = "https://photos.gruper.website/", focus = true })
 o.bind("SUPER + SHIFT + H", "Claude → Herdr", "/home/gruper/.local/bin/herdr-adopt")
+o.bind("SUPER + Q", "Close window", "omarchy-close-window")

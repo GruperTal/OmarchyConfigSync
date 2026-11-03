@@ -6,7 +6,7 @@
   },
   "bar": {
     "position": "top",
-    "transparent": false,
+    "transparent": true,
     "centerAnchor": "tmn73.calendar",
     "layout": {
       "left": [
@@ -14,20 +14,20 @@
           "id": "omarchy.menu"
         },
         {
+          "id": "crmne.hyprmoncfg"
+        },
+        {
+          "id": "novuon.tableau"
+        },
+        {
           "id": "omaplug",
           "autoCheckUpdates": true
         },
         {
-          "id": "im0001gt.screens"
-        },
-        {
-          "id": "im0001gt.screens.workspaces"
-        },
-        {
-          "id": "io.github.nobledoodle.omarchroma"
-        },
-        {
           "id": "gladimdim.config-sync"
+        },
+        {
+          "id": "omarchy.workspaces"
         }
       ],
       "center": [
@@ -38,7 +38,7 @@
           "id": "tmn73.calendar",
           "format": "ddd d MMM HH:mm",
           "formatAlt": "d MMMM 'W'ww yyyy",
-          "verticalFormat": "HH\n\u2014\nmm",
+          "verticalFormat": "HH\n—\nmm",
           "hiddenCalendars": [
             "c_18829krg0f4fuh53hgcmcomtep57c@resource.calendar.google.com",
             "qntna6f7m7rta6o2bg2l9i33io@group.calendar.google.com",
@@ -51,9 +51,15 @@
           "showYearProgress": false
         },
         {
+          "id": "aislandener.galaxy-buds"
+        },
+        {
+          "id": "omarchy.system-update"
+        },
+        {
           "id": "io.github.ypmrg.bambu-companion",
           "printerName": "3D Printer",
-          "host": "192.168.68.122",
+          "host": "192.168.68.193",
           "mqttPort": 8883,
           "ftpsPort": 990,
           "serial": "03900D662227422",
@@ -64,8 +70,10 @@
           "showBarSummary": true,
           "mqttTlsFingerprint": "6907F708C4D70747AD5249EC745772EF8924EE36CFD75DBEFCE4074C323D6546",
           "ftpsTlsFingerprint": "6907F708C4D70747AD5249EC745772EF8924EE36CFD75DBEFCE4074C323D6546",
-          "installationId": "c8fc24f00714668f1b7ec479890e1e0dda5c1b6f3f6a58d73ad8c5204cf26888",
+          "installationId": "eff8a630c04ea56edccb9d72cee4ab10e3353976b623ab4c0ff57d185894b69d",
           "acknowledgedAlerts": [
+            "hms:HMS_1200_1200_0002_0002",
+            "hms:HMS_1200_1200_0001_0001",
             "hms:HMS_1200_2200_0003_0001",
             "hms:HMS_1200_1100_0002_0002",
             "print:0x12008006",
@@ -79,24 +87,12 @@
           ]
         },
         {
-          "id": "dizziee.system-updates",
-          "alwaysShow": false,
-          "refreshIntervalSec": 1800
-        },
-        {
-          "id": "njpatel.omapager"
-        },
-        {
-          "id": "aislandener.galaxy-buds"
-        },
-        {
-          "id": "omarchy.system-update"
-        },
-        {
           "id": "hass"
         },
         {
-          "id": "io.github.jeremylanger.omaspotify"
+          "id": "dizziee.system-updates",
+          "alwaysShow": false,
+          "refreshIntervalSec": 1800
         }
       ],
       "right": [
@@ -160,15 +156,11 @@
       "id": "io.github.grupertal.biometric-hud"
     },
     {
-      "id": "k-kit.chrome-close-confirmation"
-    },
-    {
       "id": "gruper.volume-beep"
     }
   ],
   "disabledPlugins": [
-    "omarchy.lock",
-    "omarchy.notifications"
+    "omarchy.lock"
   ],
   "cloneSourceRestores": [
     "io.github.sirjul1337.lock-explorer"
