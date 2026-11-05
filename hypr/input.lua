@@ -1,15 +1,9 @@
 -- Keep only your personal input overrides here. Uncommented settings below
 -- replace Omarchy's defaults.
 
--- Caps Lock is Caps Lock. Omarchy's default makes it the Compose key
--- (compose:caps) and moves Caps Lock onto both-Shifts-together
--- (shift:both_capslock_cancel); both are dropped here. Compose moves to
--- Right Alt so ~/.XCompose sequences still work.
-hl.config({
-  input = {
-    kb_options = "compose:ralt",
-  },
-})
+-- Compose is Omarchy 4.5's default, Shift + Caps Lock (Caps Lock stays Caps Lock).
+-- Right Alt is Voxtype push-to-talk. Layouts and Alt+Shift switching live in
+-- ~/.local/state/omarchy/toggles/hypr/nomarkoo-keyboard-layout.lua.
 
 -- Keyboard layout and options.
 -- See https://wiki.hypr.land/Configuring/Basics/Variables/#input
