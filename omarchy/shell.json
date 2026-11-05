@@ -1,40 +1,11 @@
 {
-  "version": 1,
-  "idle": {
-    "screensaver": 150,
-    "lock": 300
-  },
   "bar": {
-    "position": "top",
-    "transparent": true,
+    "background": "glassy",
     "layout": {
-      "left": [
-        {
-          "id": "omarchy.menu"
-        },
-        {
-          "id": "crmne.hyprmoncfg"
-        },
-        {
-          "id": "novuon.tableau"
-        },
-        {
-          "id": "omaplug",
-          "autoCheckUpdates": true
-        },
-        {
-          "id": "gladimdim.config-sync"
-        },
-        {
-          "id": "omarchy.workspaces"
-        }
-      ],
       "center": [
         {
-          "id": "tmn73.calendar",
           "format": "ddd d MMM HH:mm",
           "formatAlt": "d MMMM 'W'ww yyyy",
-          "verticalFormat": "HH\n—\nmm",
           "hiddenCalendars": [
             "c_18829krg0f4fuh53hgcmcomtep57c@resource.calendar.google.com",
             "qntna6f7m7rta6o2bg2l9i33io@group.calendar.google.com",
@@ -43,44 +14,10 @@
             "alon.gal@folloze.com"
           ],
           "hideDeclined": true,
+          "id": "tmn73.calendar",
           "shortcutLegendExpanded": false,
-          "showYearProgress": false
-        }
-      ],
-      "right": [
-        {
-          "id": "omarchy.tray",
-          "pinned": [],
-          "hidden": []
-        },
-        {
-          "id": "jkoestinger.vpn"
-        },
-        {
-          "id": "oma.nearby",
-          "downloadDir": "/home/gruper/Downloads"
-        },
-        {
-          "id": "omarchy.keyboard-layout"
-        },
-        {
-          "id": "harshith.system-monitor",
-          "barMode": "Adaptive"
-        },
-        {
-          "id": "omarchy.bluetooth"
-        },
-        {
-          "id": "omarchy.monitor"
-        },
-        {
-          "id": "omarchy.network"
-        },
-        {
-          "id": "omarchy.audio"
-        },
-        {
-          "id": "onlyvishesh.power-manager"
+          "showYearProgress": false,
+          "verticalFormat": "HH\n—\nmm"
         }
       ],
       "centerBegin": [
@@ -93,24 +30,15 @@
           "id": "omarchy.elsewhen",
           "cities": [
             {
-              "name": "Jerusalem",
-              "zone": "Asia/Jerusalem"
-            },
-            {
-              "name": "Delhi",
-              "zone": "Asia/Kolkata"
-            },
-            {
-              "name": "Tokyo",
-              "zone": "Asia/Tokyo"
-            },
-            {
-              "name": "Los Angeles",
-              "zone": "America/Los_Angeles"
-            },
-            {
               "name": "New York",
               "zone": "America/New_York"
+            },
+            {
+              "name": "Guatemala",
+              "zone": "America/Guatemala",
+              "lat": 15.5,
+              "lon": -90.25,
+              "region": "GT"
             }
           ]
         },
@@ -131,38 +59,72 @@
           "showBarSummary": true,
           "mqttTlsFingerprint": "6907F708C4D70747AD5249EC745772EF8924EE36CFD75DBEFCE4074C323D6546",
           "ftpsTlsFingerprint": "6907F708C4D70747AD5249EC745772EF8924EE36CFD75DBEFCE4074C323D6546",
-          "installationId": "eff8a630c04ea56edccb9d72cee4ab10e3353976b623ab4c0ff57d185894b69d",
-          "acknowledgedAlerts": [
-            "hms:HMS_1200_1100_0001_0001",
-            "hms:HMS_1200_4500_0002_0001",
-            "hms:HMS_0300_0200_0001_0009",
-            "hms:HMS_0300_0200_0001_0003",
-            "print:0x03008008",
-            "hms:HMS_1200_1000_0002_0002",
-            "hms:HMS_1200_1200_0002_0002",
-            "hms:HMS_1200_1200_0001_0001",
-            "hms:HMS_1200_2200_0003_0001",
-            "hms:HMS_1200_1100_0002_0002",
-            "print:0x12008006",
-            "hms:HMS_1200_2200_0002_0001",
-            "print:0x12008011",
-            "hms:HMS_0300_1A00_0002_0001",
-            "print:0x03008014",
-            "hms:HMS_1200_4500_0002_0003",
-            "print:0x12008016",
-            "print:0x0300400C"
-          ]
+          "installationId": "0e675ba8941da54540b6d55a97c6434188227dbc4c01902461471bc9b32dca61",
+          "acknowledgedAlerts": []
         },
         {
           "id": "hass"
         },
         {
-          "id": "dizziee.system-updates",
           "alwaysShow": false,
+          "id": "dizziee.system-updates",
           "refreshIntervalSec": 1800
         },
         {
           "id": "aislandener.galaxy-buds"
+        }
+      ],
+      "left": [
+        {
+          "id": "omarchy.menu"
+        },
+        {
+          "id": "crmne.hyprmoncfg"
+        },
+        {
+          "id": "novuon.tableau"
+        },
+        {
+          "autoCheckUpdates": true,
+          "id": "omaplug"
+        },
+        {
+          "id": "gladimdim.config-sync"
+        },
+        {
+          "id": "omarchy.workspaces"
+        }
+      ],
+      "right": [
+        {
+          "hidden": [],
+          "id": "omarchy.tray",
+          "pinned": []
+        },
+        {
+          "id": "jkoestinger.vpn"
+        },
+        {
+          "id": "omarchy.keyboard-layout"
+        },
+        {
+          "barMode": "Adaptive",
+          "id": "harshith.system-monitor"
+        },
+        {
+          "id": "omarchy.bluetooth"
+        },
+        {
+          "id": "omarchy.monitor"
+        },
+        {
+          "id": "omarchy.network"
+        },
+        {
+          "id": "omarchy.audio"
+        },
+        {
+          "id": "onlyvishesh.power-manager"
         }
       ],
       "tray": [
@@ -173,17 +135,32 @@
           "id": "omarchy.agents"
         },
         {
+          "downloadDir": "/home/gruper/Downloads",
+          "id": "oma.nearby"
+        },
+        {
           "id": "davefano.trackpad-plus"
         }
       ]
-    }
+    },
+    "position": "top"
+  },
+  "cloneSourceRestores": [
+    "io.github.sirjul1337.lock-explorer"
+  ],
+  "disabledPlugins": [
+    "omarchy.lock"
+  ],
+  "idle": {
+    "lock": 300,
+    "screensaver": 150
   },
   "plugins": [
     {
-      "id": "io.github.sirjul1337.lock-explorer",
-      "design": "profile",
       "blankMs": 30000,
-      "boot": "theme"
+      "boot": "theme",
+      "design": "profile",
+      "id": "io.github.sirjul1337.lock-explorer"
     },
     {
       "id": "io.github.grupertal.biometric-hud"
@@ -192,10 +169,5 @@
       "id": "gruper.volume-beep"
     }
   ],
-  "disabledPlugins": [
-    "omarchy.lock"
-  ],
-  "cloneSourceRestores": [
-    "io.github.sirjul1337.lock-explorer"
-  ]
+  "version": 1
 }
