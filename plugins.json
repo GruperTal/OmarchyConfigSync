@@ -45,6 +45,13 @@
       "source": "https://github.com/konradk/hass.git"
     },
     {
+      "id": "igor-alexandrov.tailscale",
+      "name": "Tailscale",
+      "version": "0.1.0",
+      "commit": "b4533abd5d61723492be0f1aa7625c066e0666cf",
+      "source": "https://github.com/igor-alexandrov/omarchy-tailscale.git"
+    },
+    {
       "id": "im0001gt.screens",
       "name": "Screens",
       "version": "1.15.2",
@@ -138,15 +145,15 @@
     {
       "id": "oma.nearby",
       "name": "Nearby",
-      "version": "1.2.10",
-      "commit": "07fb895478859b36c5c0ccd878e905232c296d5a",
+      "version": "1.2.14",
+      "commit": "b26b5dc22a5c5f1d1c26edb80a7676c932f6afaa",
       "source": "https://github.com/jfg96/omarchy-nearby.git"
     },
     {
       "id": "omaplug",
       "name": "Plugin Manager",
-      "version": "1.7.0",
-      "commit": "ebfec41a28b50bc1ddf352d72d5e1718dfd331cc",
+      "version": "1.7.1",
+      "commit": "d1b159ab5e2d199b1dc087e98afb6f2c166b1a1f",
       "source": "https://github.com/fross100/omaplug.git"
     },
     {
@@ -164,10 +171,17 @@
       "source": "https://github.com/0xSero/omarchy-local-ai"
     },
     {
+      "id": "sridhar.layout-presets",
+      "name": "Layout Presets",
+      "version": "1.0.0",
+      "commit": "ae6b3c87cd2bbdaa8a4b5eb6bdc4c08aa2ed9d30",
+      "source": "https://github.com/srikat/omarchy-layout-presets.git"
+    },
+    {
       "id": "tmn73.calendar",
       "name": "Calendar",
       "version": "0.9.6",
-      "commit": "c9086cee5e85f1d21494930a709f700bdd980b8d",
+      "commit": "8555bbeb2e0684fcee32612b06e0781a8430abef",
       "source": "https://github.com/tmn73/omarchy-calendar.git"
     }
   ]

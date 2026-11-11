@@ -24,3 +24,4 @@ o.bind("SUPER + SHIFT + H", "Claude → Herdr", "/home/gruper/.local/bin/herdr-a
 o.bind("SUPER + Q", "Close window", "omarchy-close-window")
 o.bind("SUPER + CTRL + RETURN", "Herdr", { launch = "herdr-app", focus = "^herdr-app$" })
   o.bind("SUPER + CTRL + X", "Toggle dictation", "omarchy-dictation toggle")
+o.rebind("SUPER + SHIFT + SPACE", "Next layout preset", "omarchy-shell layouts next")

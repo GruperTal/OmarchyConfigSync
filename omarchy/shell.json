@@ -27,40 +27,49 @@
       ],
       "centerEnd": [
         {
-          "id": "omarchy.elsewhen",
           "cities": [
             {
               "name": "New York",
               "zone": "America/New_York"
             },
             {
-              "name": "Guatemala",
-              "zone": "America/Guatemala",
               "lat": 15.5,
               "lon": -90.25,
-              "region": "GT"
+              "name": "Guatemala",
+              "region": "GT",
+              "zone": "America/Guatemala"
+            },
+            {
+              "lat": 13.75398,
+              "lon": 100.50144,
+              "name": "Bangkok",
+              "region": "TH",
+              "zone": "Asia/Bangkok"
             }
-          ]
+          ],
+          "id": "omarchy.elsewhen"
         },
         {
           "id": "omarchy.system-update"
         },
         {
-          "id": "io.github.ypmrg.bambu-companion",
-          "printerName": "3D Printer",
-          "host": "192.168.68.193",
-          "mqttPort": 8883,
-          "ftpsPort": 990,
-          "serial": "03900D662227422",
-          "username": "bblp",
-          "maxSegments": 500000,
-          "explosionFactor": 100,
+          "acknowledgedAlerts": [
+            "hms:HMS_0500_0500_0001_0031"
+          ],
           "autoRotate": true,
-          "showBarSummary": true,
-          "mqttTlsFingerprint": "6907F708C4D70747AD5249EC745772EF8924EE36CFD75DBEFCE4074C323D6546",
+          "explosionFactor": 100,
+          "ftpsPort": 990,
           "ftpsTlsFingerprint": "6907F708C4D70747AD5249EC745772EF8924EE36CFD75DBEFCE4074C323D6546",
+          "host": "192.168.68.193",
+          "id": "io.github.ypmrg.bambu-companion",
           "installationId": "0e675ba8941da54540b6d55a97c6434188227dbc4c01902461471bc9b32dca61",
-          "acknowledgedAlerts": []
+          "maxSegments": 500000,
+          "mqttPort": 8883,
+          "mqttTlsFingerprint": "6907F708C4D70747AD5249EC745772EF8924EE36CFD75DBEFCE4074C323D6546",
+          "printerName": "3D Printer",
+          "serial": "03900D662227422",
+          "showBarSummary": true,
+          "username": "bblp"
         },
         {
           "id": "hass"
@@ -102,6 +111,11 @@
           "pinned": []
         },
         {
+          "id": "sridhar.layout-presets",
+          "lastColumnPreset": "60-40",
+          "lastPreset": "50(50/50)-50(50/50)"
+        },
+        {
           "id": "jkoestinger.vpn"
         },
         {
@@ -140,6 +154,9 @@
         },
         {
           "id": "davefano.trackpad-plus"
+        },
+        {
+          "id": "igor-alexandrov.tailscale"
         }
       ]
     },
@@ -151,6 +168,17 @@
   "disabledPlugins": [
     "omarchy.lock"
   ],
+  "dock": {
+    "pinned": [
+      "org.gnome.Nautilus",
+      "chromium",
+      "foot",
+      "omacalc",
+      "omawrite",
+      "X",
+      "YouTube"
+    ]
+  },
   "idle": {
     "lock": 300,
     "screensaver": 150

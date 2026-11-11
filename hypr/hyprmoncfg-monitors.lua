@@ -4,9 +4,9 @@
 omarchy_monitor_panel_settings = false
 
 hl.monitor({
-  output = "desc:Lenovo Group Limited L27q-35 URB52XHM",
-  mode = "2560x1440@59.95",
-  position = "4480x0",
+  output = "desc:Dell Inc. DELL P2422H DTTXL93",
+  mode = "1920x1080@60.00",
+  position = "1920x0",
   scale = 1,
   vrr = 0,
   sdr_min_luminance = 0.2,
@@ -14,9 +14,9 @@ hl.monitor({
 })
 
 hl.monitor({
-  output = "desc:Lenovo Group Limited P27h-20 V90A5F3D",
-  mode = "2560x1440@59.95",
-  position = "1920x0",
+  output = "desc:Dell Inc. DELL U2422H 67Z8G83",
+  mode = "1920x1080@60.00",
+  position = "0x0",
   scale = 1,
   vrr = 0,
   sdr_min_luminance = 0.2,
@@ -78,12 +78,10 @@ if type(o) == "table" and type(o.workspaces) == "table" and type(o.workspaces.re
   end
 end
 
-hl.workspace_rule({ workspace = "1", monitor = "desc:Lenovo Group Limited P27h-20 V90A5F3D", default = true, persistent = true })
-hl.workspace_rule({ workspace = "2", monitor = "desc:Lenovo Group Limited P27h-20 V90A5F3D" })
-hl.workspace_rule({ workspace = "3", monitor = "desc:Lenovo Group Limited L27q-35 URB52XHM", default = true, persistent = true })
-hl.workspace_rule({ workspace = "4", monitor = "desc:Lenovo Group Limited L27q-35 URB52XHM" })
-hl.workspace_rule({ workspace = "5", monitor = "desc:Lenovo Group Limited P27h-20 V90A5F3D" })
-hl.workspace_rule({ workspace = "6", monitor = "desc:Lenovo Group Limited P27h-20 V90A5F3D" })
+hl.workspace_rule({ workspace = "1", monitor = "desc:Dell Inc. DELL U2422H 67Z8G83", default = true, persistent = true })
+hl.workspace_rule({ workspace = "2", monitor = "desc:Dell Inc. DELL U2422H 67Z8G83" })
+hl.workspace_rule({ workspace = "3", monitor = "desc:Dell Inc. DELL P2422H DTTXL93", default = true, persistent = true })
+hl.workspace_rule({ workspace = "4", monitor = "desc:Dell Inc. DELL P2422H DTTXL93" })
 
 -- Omarchy leaves GDK_SCALE to this file.
 if type(o) == "table" then hl.env("GDK_SCALE", "1") end
