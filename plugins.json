@@ -12,8 +12,8 @@
     {
       "id": "crmne.hyprmoncfg",
       "name": "hyprmoncfg: Multi-Monitor Manager for Omarchy",
-      "version": "2.14.1",
-      "commit": "e2facf13d02d83f1b1d0295b2a771fca7bb19b5f",
+      "version": "2.16.0",
+      "commit": "bd2bcee9eea605c349215a2ae6c992108d161129",
       "source": "https://github.com/crmne/omarchy-hyprmoncfg.git"
     },
     {
@@ -22,6 +22,13 @@
       "version": "2026.10.07.0",
       "commit": "34646090e7c516d8a3a801621767b2052f4d3858",
       "source": "https://github.com/davefano/omarchy-trackpad-plus.git"
+    },
+    {
+      "id": "dev.android-mirroring",
+      "name": "Android Mirroring",
+      "version": "0.3.1",
+      "commit": "ea4c783a87802efefee14af9894851d168b579ee",
+      "source": "https://github.com/camburalex/android-mirroring-omarchy.git"
     },
     {
       "id": "dizziee.system-updates",
@@ -40,8 +47,8 @@
     {
       "id": "hass",
       "name": "Home Assistant",
-      "version": "0.5.0",
-      "commit": "56f1dcdd201e39cbe116d3cbe2cb22b40f394b9b",
+      "version": "0.6.0",
+      "commit": "eb3335246526d7adaa6479f227632959900bd15a",
       "source": "https://github.com/konradk/hass.git"
     },
     {
@@ -89,15 +96,15 @@
     {
       "id": "io.github.sirjul1337.lock-explorer",
       "name": "Lock Screen Explorer",
-      "version": "2.0.12",
-      "commit": "2eea8816bae146ec4bed1894b71bb9b2350b063d",
+      "version": "2.0.16",
+      "commit": "74d73c84e0ab8ee877eb8a68c10db3772588e9c7",
       "source": "https://github.com/SirJul1337/omarchy-lock-explorer.git"
     },
     {
       "id": "io.github.ypmrg.bambu-companion",
       "name": "Bambu Companion",
       "version": "1.8.4",
-      "commit": "e37a3eee86c545b89f9ad23a57feb9dcd226be23",
+      "commit": "a723cd988655a957f28850d5a1e987cc496df65e",
       "source": "https://github.com/ypMrg/omarchy-bambu-companion.git"
     },
     {
@@ -145,15 +152,15 @@
     {
       "id": "oma.nearby",
       "name": "Nearby",
-      "version": "1.2.14",
-      "commit": "b26b5dc22a5c5f1d1c26edb80a7676c932f6afaa",
+      "version": "1.2.15",
+      "commit": "6724385afe3434c9bcc53e1ec1f2e1c090fb9db6",
       "source": "https://github.com/jfg96/omarchy-nearby.git"
     },
     {
       "id": "omaplug",
       "name": "Plugin Manager",
-      "version": "1.7.1",
-      "commit": "d1b159ab5e2d199b1dc087e98afb6f2c166b1a1f",
+      "version": "1.7.4",
+      "commit": "f3566678f6f4b4d9911df1ea60588ab22f9f3cc3",
       "source": "https://github.com/fross100/omaplug.git"
     },
     {
@@ -181,8 +188,15 @@
       "id": "tmn73.calendar",
       "name": "Calendar",
       "version": "0.9.6",
-      "commit": "8555bbeb2e0684fcee32612b06e0781a8430abef",
+      "commit": "b95d109e40d1a3020b685eceff0cb883c3fa5de8",
       "source": "https://github.com/tmn73/omarchy-calendar.git"
+    },
+    {
+      "id": "typecraft.omacast",
+      "name": "omacast",
+      "version": "0.1.0",
+      "commit": "283fee52e37e20ae9a1dc4920b441e2a873a1bfb",
+      "source": "https://github.com/typecraft-dev/oma-cast"
     }
   ]
 }

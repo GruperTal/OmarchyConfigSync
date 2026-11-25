@@ -3,9 +3,16 @@
 -- hyprmoncfg owns monitor configuration, so Omarchy's display panel settings stand down.
 omarchy_monitor_panel_settings = false
 
+-- Omarchy's scale keys would write monitors.lua, which this file overrides.
+-- hyprmoncfg saves the new scale to the profile in use instead.
+if type(o) == "table" and type(o.rebind) == "function" then
+  o.rebind("SUPER + SLASH", "Monitor scaling up", "hyprmoncfg scale up")
+  o.rebind("SUPER + ALT + SLASH", "Monitor scaling down", "hyprmoncfg scale down")
+end
+
 hl.monitor({
-  output = "desc:Dell Inc. DELL P2422H DTTXL93",
-  mode = "1920x1080@60.00",
+  output = "desc:Dell Inc. DELL U2415 7MT016C93G2S",
+  mode = "1920x1200@59.95",
   position = "1920x0",
   scale = 1,
   vrr = 0,
@@ -14,18 +21,13 @@ hl.monitor({
 })
 
 hl.monitor({
-  output = "desc:Dell Inc. DELL U2422H 67Z8G83",
-  mode = "1920x1080@60.00",
+  output = "desc:LG Display 0x06CE",
+  mode = "1920x1200@59.95",
   position = "0x0",
   scale = 1,
   vrr = 0,
   sdr_min_luminance = 0.2,
   sdr_max_luminance = 80,
-})
-
-hl.monitor({
-  output = "desc:LG Display 0x06CE",
-  disabled = true,
 })
 
 -- hyprmoncfg owns the global workspace plan. Omarchy's monitor-local
@@ -35,6 +37,10 @@ if type(o) == "table" and type(o.workspaces) == "table" and type(o.workspaces.re
   -- startup, reload and hotplug. Disable its reassignment before those run.
   o.workspaces.enabled = false
   o.workspaces.reconcile = function() end
+
+  -- The plan's persistent workspaces. Hyprland keeps one on the monitor its
+  -- rule names and moves it back after a move (#123).
+  local persistent = { ["1"] = true, ["3"] = true }
 
   local function action(expression, fn)
     o.bind_expressions[fn] = expression
@@ -55,7 +61,20 @@ if type(o) == "table" and type(o.workspaces) == "table" and type(o.workspaces.re
 
   function o.workspaces.move_to_monitor(direction)
     return action("o.workspaces.move_to_monitor(" .. string.format("%q", direction) .. ")", function()
-      hl.dispatch(hl.dsp.workspace.move({ monitor = direction }))
+      -- workspace.move takes a monitor, not a direction. Resolve it first;
+      -- with no monitor that way, Hyprland would report an error on screen.
+      local target = hl.get_monitor(direction)
+      if not target then
+        return
+      end
+      -- Pin a persistent planned workspace to its new monitor first, so it
+      -- stays there. The rule lives until the next reload, which restores
+      -- the plan; the saved profile is unchanged.
+      local workspace = hl.get_active_workspace()
+      if workspace and persistent[tostring(workspace.id)] then
+        hl.workspace_rule({ workspace = tostring(workspace.id), monitor = target.name, persistent = true, default = false })
+      end
+      hl.dispatch(hl.dsp.workspace.move({ monitor = target.name }))
     end)
   end
 
@@ -78,13 +97,18 @@ if type(o) == "table" and type(o.workspaces) == "table" and type(o.workspaces.re
   end
 end
 
-hl.workspace_rule({ workspace = "1", monitor = "desc:Dell Inc. DELL U2422H 67Z8G83", default = true, persistent = true })
-hl.workspace_rule({ workspace = "2", monitor = "desc:Dell Inc. DELL U2422H 67Z8G83" })
-hl.workspace_rule({ workspace = "3", monitor = "desc:Dell Inc. DELL P2422H DTTXL93", default = true, persistent = true })
-hl.workspace_rule({ workspace = "4", monitor = "desc:Dell Inc. DELL P2422H DTTXL93" })
+hl.workspace_rule({ workspace = "1", monitor = "desc:LG Display 0x06CE", default = true, persistent = true })
+hl.workspace_rule({ workspace = "2", monitor = "desc:LG Display 0x06CE" })
+hl.workspace_rule({ workspace = "3", monitor = "desc:Dell Inc. DELL U2415 7MT016C93G2S", default = true, persistent = true })
+hl.workspace_rule({ workspace = "4", monitor = "desc:Dell Inc. DELL U2415 7MT016C93G2S" })
+hl.workspace_rule({ workspace = "5", monitor = "desc:LG Display 0x06CE" })
+hl.workspace_rule({ workspace = "6", monitor = "desc:LG Display 0x06CE" })
 
 -- Omarchy leaves GDK_SCALE to this file.
-if type(o) == "table" then hl.env("GDK_SCALE", "1") end
+if type(o) == "table" then
+  hl.env("GDK_SCALE", "1")
+  hl.exec_cmd("dbus-update-activation-environment --systemd GDK_SCALE=1")
+end
 
 -- Omarchy's Mirror Display toggle takes effect over the profile while it is on.
 do
@@ -98,3 +122,5 @@ do
     file:close()
   end
 end
+
+hl.config({ input = { touchdevice = { transform = 0 }, tablet = { transform = 0 } } })

@@ -4,6 +4,7 @@
     "layout": {
       "center": [
         {
+          "id": "tmn73.calendar",
           "format": "ddd d MMM HH:mm",
           "formatAlt": "d MMMM 'W'ww yyyy",
           "hiddenCalendars": [
@@ -14,10 +15,10 @@
             "alon.gal@folloze.com"
           ],
           "hideDeclined": true,
-          "id": "tmn73.calendar",
           "shortcutLegendExpanded": false,
           "showYearProgress": false,
-          "verticalFormat": "HH\n—\nmm"
+          "verticalFormat": "HH\n—\nmm",
+          "liveProgress": "left"
         }
       ],
       "centerBegin": [
@@ -53,23 +54,28 @@
           "id": "omarchy.system-update"
         },
         {
-          "acknowledgedAlerts": [
-            "hms:HMS_0500_0500_0001_0031"
-          ],
-          "autoRotate": true,
-          "explosionFactor": 100,
-          "ftpsPort": 990,
-          "ftpsTlsFingerprint": "6907F708C4D70747AD5249EC745772EF8924EE36CFD75DBEFCE4074C323D6546",
-          "host": "192.168.68.193",
           "id": "io.github.ypmrg.bambu-companion",
-          "installationId": "0e675ba8941da54540b6d55a97c6434188227dbc4c01902461471bc9b32dca61",
-          "maxSegments": 500000,
-          "mqttPort": 8883,
-          "mqttTlsFingerprint": "6907F708C4D70747AD5249EC745772EF8924EE36CFD75DBEFCE4074C323D6546",
           "printerName": "3D Printer",
+          "host": "192.168.68.193",
+          "mqttPort": 8883,
+          "ftpsPort": 990,
           "serial": "03900D662227422",
+          "username": "bblp",
+          "maxSegments": 500000,
+          "explosionFactor": 100,
+          "autoRotate": true,
           "showBarSummary": true,
-          "username": "bblp"
+          "mqttTlsFingerprint": "6907F708C4D70747AD5249EC745772EF8924EE36CFD75DBEFCE4074C323D6546",
+          "ftpsTlsFingerprint": "6907F708C4D70747AD5249EC745772EF8924EE36CFD75DBEFCE4074C323D6546",
+          "installationId": "cdbe84518fedff92f54c73c80b6548884ace1de00eba294484278d0448bcfba2",
+          "acknowledgedAlerts": [
+            "print:0x12008010",
+            "hms:HMS_1200_8000_0002_0001",
+            "hms:HMS_1200_2000_0002_0006",
+            "print:0x12008007",
+            "print:0x0300400C",
+            "hms:HMS_0500_0500_0001_0031"
+          ]
         },
         {
           "id": "hass"
@@ -111,8 +117,11 @@
           "pinned": []
         },
         {
+          "id": "dev.android-mirroring"
+        },
+        {
           "id": "sridhar.layout-presets",
-          "lastColumnPreset": "60-40",
+          "lastColumnPreset": "50-50",
           "lastPreset": "50(50/50)-50(50/50)"
         },
         {
@@ -195,6 +204,12 @@
     },
     {
       "id": "gruper.volume-beep"
+    },
+    {
+      "id": "io.voxtype.settings"
+    },
+    {
+      "id": "typecraft.omacast"
     }
   ],
   "version": 1
